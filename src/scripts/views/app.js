@@ -19,7 +19,7 @@ class App {
     });
 
     // kita bisa menginisiasikan komponen lain bila ada
-  }
+
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
