@@ -17,9 +17,9 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
+  }
 
-    // kita bisa menginisiasikan komponen lain bila ada
-
+  // kita bisa menginisiasikan komponen lain bila ada
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
