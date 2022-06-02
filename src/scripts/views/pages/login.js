@@ -1,8 +1,7 @@
 const Login = {
-    async render() {
-      return `
+  async render() {
+    return `
         <center><h2>Login</h2></center>
-
         <div class="container">
             <form>
                 <div class="form-group">
@@ -17,11 +16,11 @@ const Login = {
             </form>
         </div>        
       `;
-    },
-   
-    async afterRender() {
-      // Fungsi ini akan dipanggil setelah render()
-    },
-  };
-   
-  export default Login;
+  },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  },
+};
+
+export default Login;
