@@ -1,6 +1,7 @@
 const Register = {
     async render() {
       return `
+        <br>
         <center><h2>Registasi pengguna baru</h2></center>
         <hr>
 
@@ -10,9 +11,13 @@ const Register = {
                     <label for="nama" class="form-label">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama" name="fullName" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="Username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="Username" name="userName" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="passWord" required>
                 </div>
                 <div class="col-md-12">
                     <label for="Alamat" class="form-label">Alamat</label>

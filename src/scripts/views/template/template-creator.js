@@ -13,7 +13,7 @@ const createCard = (data) => {
         <p class="card-text">
           Raja Ampat adalah salah satu objek wisata paling indah yang ada di Indonesia...
         </p>
-        <a href="#">Detail <i class="fas fa-arrow-right"></i></a>
+        <a href="#/detail">Detail <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>`;

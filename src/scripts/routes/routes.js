@@ -3,6 +3,8 @@ import Favorit from '../views/pages/favorit';
 import Koleksi from '../views/pages/koleksi';
 import Login from '../views/pages/login';
 import Registasi from '../views/pages/registrasi';
+import Detail from '../views/pages/detail'
+import userProfile from '../views/pages/user_profil'
  
 const routes = {
   '/': Home, // default page
@@ -11,6 +13,8 @@ const routes = {
   '/koleksi': Koleksi,
   '/login': Login,
   '/registrasi': Registasi,
+  '/detail': Detail,
+  '/user_profil': userProfile,
 };
  
 export default routes;
