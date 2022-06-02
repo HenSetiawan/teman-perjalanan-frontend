@@ -97,3 +97,11 @@ footer ul {
   border-radius: 50% !important;
   line-height: 50px !important;
 }
+
+.btn-login {
+  background-color: #fa7436;
+  color: white;
+  height: 44px;
+  border-radius: 16px;
+}
+
