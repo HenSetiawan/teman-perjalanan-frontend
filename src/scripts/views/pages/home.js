@@ -1,3 +1,4 @@
+import { createCard } from '../template/template-creator';
 const Home = {
   async render() {
     return `
@@ -16,11 +17,23 @@ const Home = {
         />
       </div>
     </div>
+    <div class="row travel-section mt-5">
+    <div class="col-lg-12">
+      <h2 class="text-center">Telusuri tempat baru</h2>
+      <p class="text-secondary text-center">
+          Temukan berbagai tempat menarik yang bisa anda kunjungi
+        </p>
+    </div>
+    </div>
+
+    <div class="row mt-2 list-travel">
+    </div>
       `;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const listTravelContainer = document.querySelector('.list-travel');
+    listTravelContainer.innerHTML += createCard();
   },
 };
 
