@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section h1 {
+  font-family: 'Volkhov', serif;
+  font-size: 44px;
+}
+
+.hero-section p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-section span{
+    color:#FA7436;
+}
+
+.hero-image {
+  width: 100%;
+}
