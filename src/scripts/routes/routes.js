@@ -5,6 +5,9 @@ import Login from '../views/pages/login';
 import Registasi from '../views/pages/registrasi';
 import Detail from '../views/pages/detail'
 import userProfile from '../views/pages/user_profil'
+import adminProfile from '../views/pages/admin_profil'
+import dataAdmin from '../views/pages/data_admin'
+import dataObjekWisata from '../views/pages/data_objek_wisata'
  
 const routes = {
   '/': Home, // default page
@@ -15,6 +18,10 @@ const routes = {
   '/registrasi': Registasi,
   '/detail': Detail,
   '/user_profil': userProfile,
+  '/admin_profil': adminProfile,
+  '/data_admin': dataAdmin,
+  '/data_objek_wisata': dataObjekWisata,
+
 };
  
 export default routes;
