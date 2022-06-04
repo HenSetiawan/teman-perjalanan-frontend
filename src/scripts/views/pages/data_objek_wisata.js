@@ -68,12 +68,12 @@ const dataObjekWisata = {
                       <textarea class="form-control" id="deskripsiObjek" name="deskripsi_objek_wisata" required></textarea>
                   </div>
                   <div class="col-md-12">
-                      <label for="lokasiObjek" class="form-label">Lokasi Objek Wisata</label>
-                      <input type="text" class="form-control" id="lokasiObjek" name="lokasi_objek_wisata" required>
-                  </div>
-                  <div class="col-md-12">
                       <label for="kotaObjek" class="form-label">Kota</label>
                       <input type="text" class="form-control" id="kotaObjek" name="kota_objek_wisata" required>
+                  </div>
+                  <div class="col-md-12">
+                      <label for="lokasiObjek" class="form-label">Alamat Objek Wisata</label>
+                      <input type="text" class="form-control" id="lokasiObjek" name="lokasi_objek_wisata" required>
                   </div>
                   <div class="col-md-12">
                       <label for="thumbnailObjek" class="form-label">Gambar</label>
