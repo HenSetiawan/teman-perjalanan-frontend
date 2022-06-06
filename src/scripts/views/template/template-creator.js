@@ -4,16 +4,16 @@ const createCard = (data) => {
       <img
         src="./images/hero.png"
         class="card-img-top"
-        alt="image travel"
+        alt="${data.name}"
       />
       <div class="card-body">
         <h5 class="card-title">
-          Raja Ampat
+          ${data.name}
         </h5>
         <p class="card-text">
-          Raja Ampat adalah salah satu objek wisata paling indah yang ada di Indonesia...
+          ${data.description}
         </p>
-        <a href="#/detail">Detail <i class="fas fa-arrow-right"></i></a>
+        <a href="#/detail/${data.id}">Detail <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>`;
