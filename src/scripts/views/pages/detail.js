@@ -17,8 +17,10 @@ const Detail = {
                   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique ut neque ac convallis. Vivamus nec ligula at ipsum iaculis eleifend. Cras venenatis sodales neque eget venenatis. Pellentesque at aliquam risus. Cras dignissim nisl ut mi auctor, vel mollis magna accumsan. Maecenas id nulla vitae ligula pretium pretium. Etiam consequat libero id ligula gravida, at commodo lacus auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                 </li>
                 <li class="list-group-item">
-                  <strong>kota Raja Ampat</strong>
-                  alamat Raja Ampat
+                  <div class="location mt-4">
+                      <span><i class="fa fa-map-marker stop mt-2"></i> <small class="text-truncate ml-2"><strong>Kota Raja Ampat</strong></small> </span>  
+                      <p>Alamat Raja Ampat</p>                  
+                  </div>
                 </li>
                 <li class="list-group-item">
                 <small class="text-muted">
