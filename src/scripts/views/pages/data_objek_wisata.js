@@ -1,5 +1,5 @@
 import {dataTableWisata} from '../template/template-creator';
-import destinationService from '../../services/destination-service';
+import {getAllDestinations} from '../../services/destination-service';
 
 const dataObjekWisata = {
   async render() {
@@ -88,12 +88,12 @@ const dataObjekWisata = {
 
   async afterRender() {
     const tableData = document.querySelector("#dataTable");
-    const destinations = await destinationService.getAllDestinations();
+    const destinations = await getAllDestinations();
     destinations.destination.forEach((dataObjek) => {
       let number = 1;
       tableData.innerHTML += dataTableWisata(dataObjek, number);
     });
-  },
+  }
 };
 
 export default dataObjekWisata;

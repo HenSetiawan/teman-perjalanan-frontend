@@ -35,5 +35,19 @@ const dataTableWisata = (dataObjek, number) => `
 ` 
 
 
+// data admin untuk tabel admin pada halaman data_admin
+const dataTableAdmin = (admins, number) => `
+  <tr>
+    <td>${admins.name}</td>
+    <td>${admins.email}</td>
+    <td>${admins.number_phone}</td>
+    <td>                              
+      <a href="#" class="btn btn-sm btn-warning">Edit</a>
+      <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+    </td>
+  </tr>
+`
+
+
 
 export {createCard, dataTableWisata}

@@ -1,3 +1,6 @@
+import {dataTableAdmin} from '../template/template-creator';
+import {getAllAdmin} from '../../services/admin-service';
+
 const dataAdmin = {
   async render() {
     return `
@@ -22,17 +25,10 @@ const dataAdmin = {
                       <thead>
                         <tr>
                             <th scope="col">NAMA ADMIN</th>
-                            <th scope="col">USERNAME</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">NOMOR TELPON</th>
                             <th scope="col">OPSI</th>
-                        </tr>
-                        <tr>
-                            <td>Sam Samid</td>
-                            <td>SamidMadaArtupas</td>
-                            <td>                              
-                              <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                              <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                            </td>
-                        </tr>
+                        </tr>                        
                       </thead>
                       <tbody>
                       </tbody>
@@ -85,7 +81,13 @@ const dataAdmin = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const tableData = document.querySelector("#dataTable");
+    const admins = await getAllAdmin();
+    console.log(admins)
+    // admins.data.forEach((dataAdmin) => {
+    //   let number = 1;
+    //   tableData.innerHTML += getAllAdmin(dataAdmin, number);
+    // });
   },
 };
 

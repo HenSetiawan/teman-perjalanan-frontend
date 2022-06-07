@@ -1,5 +1,5 @@
 import { createCard } from '../template/template-creator';
-import destinationService from '../../services/destination-service';
+import { getAllDestinations } from '../../services/destination-service';
 const Home = {
   async render() {
     return `
@@ -34,7 +34,7 @@ const Home = {
 
   async afterRender() {
     const listTravelContainer = document.querySelector('.list-travel');
-    const destinations = await destinationService.getAllDestinations();
+    const destinations = await getAllDestinations();
     destinations.destination.forEach((destination) => {
       listTravelContainer.innerHTML += createCard(destination);
     });

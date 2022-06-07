@@ -1,4 +1,4 @@
-exports.getAllDestinations = async () => {
+const getAllDestinations = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/destinations');
     const destinations = await response.json();
@@ -7,3 +7,6 @@ exports.getAllDestinations = async () => {
     console.error(error);
   }
 };
+
+export { getAllDestinations };
+
