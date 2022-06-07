@@ -1,3 +1,6 @@
+import {dataTableWisata} from '../template/template-creator';
+import destinationService from '../../services/destination-service';
+
 const dataObjekWisata = {
   async render() {
     return `
@@ -27,17 +30,6 @@ const dataObjekWisata = {
                             <th scope="col">LOKASI</th>
                             <th scope="col">KOTA</th>
                             <th scope="col">OPSI</th>
-                        </tr>
-                        <tr>
-                            <td class="text-center">1</td>
-                            <td>Curug Putri Pandeglang</td>
-                            <td>Air Terjun</td>
-                            <td>Sukarame, Kec. Carita, Kabupaten Pandeglang, Banten</td>
-                            <td>Pandeglang, Banten</td>
-                            <td>                              
-                              <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                              <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                            </td>
                         </tr>
                       </thead>
                       <tbody>
@@ -95,7 +87,12 @@ const dataObjekWisata = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const tableData = document.querySelector("#dataTable");
+    const destinations = await destinationService.getAllDestinations();
+    destinations.destination.forEach((dataObjek) => {
+      let number = 1;
+      tableData.innerHTML += dataTableWisata(dataObjek, number);
+    });
   },
 };
 
