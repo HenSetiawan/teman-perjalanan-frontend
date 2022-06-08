@@ -16,7 +16,7 @@ const routes = {
   '/koleksi': Koleksi,
   '/login': Login,
   '/registrasi': Registasi,
-  '/detail': Detail,
+  '/detail/:id': Detail,
   '/user_profil': userProfile,
   '/admin_profil': adminProfile,
   '/data_admin': dataAdmin,

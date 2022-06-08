@@ -5,7 +5,7 @@ const Detail = {
           <div class="card travel-card">
             <img
               src="./images/hero.png"
-              class="card-img-top"
+              class="detail-img image-responsive"
               alt="image travel"
             />
             <div class="card-body">
@@ -21,11 +21,6 @@ const Detail = {
                       <span><i class="fa fa-map-marker stop mt-2"></i> <small class="text-truncate ml-2"><strong>Kota Raja Ampat</strong></small> </span>  
                       <p>Alamat Raja Ampat</p>                  
                   </div>
-                </li>
-                <li class="list-group-item">
-                <small class="text-muted">
-                  Last updated 3 mins ago
-                </small>
                 </li>
               </ul>
               <p class="card-text text-justify">
