@@ -32,12 +32,15 @@ body {
   box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.8);
   text-decoration: none !important;
   margin-top: 80px !important;
-  margin: auto;
-  width:60%;
 }
 .travel-card h5 {
   font-weight: 700;
   font-size: 20px;
+}
+
+.detail-card {
+  width:60%;
+  margin: auto;
 }
 
 .travel-card p {

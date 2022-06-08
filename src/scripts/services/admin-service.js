@@ -8,5 +8,28 @@ const getAllAdmin = async () => {
   }
 };
 
-export { getAllAdmin };
+const loginAdmin = async (username, password) => {
+  const data = { username: username, password: password };
+  try {
+    const response = await fetch(
+      'http://localhost:3000/api/v1/auth/admin/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    const result = await response.json();
+    if (result.token) {
+      return result.token;
+    } else {
+      return 'failed';
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
+export { getAllAdmin, loginAdmin };

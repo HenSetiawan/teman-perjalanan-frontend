@@ -2,7 +2,7 @@ const Detail = {
     async render() {
       return `
         <div class="container">
-          <div class="card travel-card">
+          <div class="card travel-card detail-card">
             <img
               src="./images/hero.png"
               class="detail-img image-responsive"
