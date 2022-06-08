@@ -1,5 +1,5 @@
-import {dataTableAdmin} from '../template/template-creator';
-import {getAllAdmin} from '../../services/admin-service';
+import { dataTableAdmin } from '../template/template-creator';
+import { getAllAdmin } from '../../services/admin-service';
 
 const dataAdmin = {
   async render() {
@@ -25,8 +25,8 @@ const dataAdmin = {
                       <thead>
                         <tr>
                             <th scope="col">NAMA ADMIN</th>
+                            <th scope="col">USERNAME</th>
                             <th scope="col">EMAIL</th>
-                            <th scope="col">NOMOR TELPON</th>
                             <th scope="col">OPSI</th>
                         </tr>                        
                       </thead>
@@ -81,12 +81,10 @@ const dataAdmin = {
   },
 
   async afterRender() {
-    const tableData = document.querySelector("#dataTable");
-    const admins = await getAllAdmin();
-    console.log(admins)
-    admins.data.forEach((dataAdmin) => {
-      let number = 1;
-      tableData.innerHTML += getAllAdmin(dataAdmin, number);
+    const tableData = document.querySelector('#dataTable');
+    const data = await getAllAdmin();
+    data.admins.forEach((admin) => {
+      tableData.innerHTML += dataTableAdmin(admin);
     });
   },
 };

@@ -32,22 +32,19 @@ const dataTableWisata = (dataObjek, number) => `
       <a href="#" class="btn btn-sm btn-danger">Hapus</a>
     </td>
   </tr>
-` 
-
+`;
 
 // data admin untuk tabel admin pada halaman data_admin
 const dataTableAdmin = (admins, number) => `
   <tr>
     <td>${admins.name}</td>
+    <td>${admins.username}</td>
     <td>${admins.email}</td>
-    <td>${admins.number_phone}</td>
     <td>                              
       <a href="#" class="btn btn-sm btn-warning">Edit</a>
       <a href="#" class="btn btn-sm btn-danger">Hapus</a>
     </td>
   </tr>
-`
+`;
 
-
-
-export {createCard, dataTableWisata}
+export { createCard, dataTableWisata, dataTableAdmin };
