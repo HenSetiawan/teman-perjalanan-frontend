@@ -84,10 +84,10 @@ const dataAdmin = {
     const tableData = document.querySelector("#dataTable");
     const admins = await getAllAdmin();
     console.log(admins)
-    // admins.data.forEach((dataAdmin) => {
-    //   let number = 1;
-    //   tableData.innerHTML += getAllAdmin(dataAdmin, number);
-    // });
+    admins.data.forEach((dataAdmin) => {
+      let number = 1;
+      tableData.innerHTML += getAllAdmin(dataAdmin, number);
+    });
   },
 };
 

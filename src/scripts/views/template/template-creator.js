@@ -2,7 +2,7 @@ const createCard = (data) => {
   return ` <div class="col-md-4 col-lg-4 col-sm-6 mb-2">
     <div class="card travel-card">
       <img
-        src="./images/hero.png"
+        src="http://localhost:3000/public/${data.thumbail}"
         class="card-img-top"
         alt="${data.name}"
       />

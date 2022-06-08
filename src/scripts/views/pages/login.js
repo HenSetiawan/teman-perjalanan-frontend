@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
 import { loginAdmin } from '../../services/admin-service';
 
 const Login = {
@@ -45,11 +46,12 @@ const Login = {
 
   async afterRender() {
     const btnLogin = document.querySelector('.btn-login');
-    btnLogin.addEventListener('click', (e) => {
+    btnLogin.addEventListener('click', async (e) => {
       e.preventDefault();
       const username = document.querySelector('#username').value;
       const password = document.querySelector('#password').value;
       const token = await loginAdmin(username, password);
+      localStorage.setItem('token', token);
     });
   },
 };
