@@ -2,7 +2,7 @@ const createCard = (data) => {
   return ` <div class="col-md-4 col-lg-4 col-sm-6 mb-2">
     <div class="card travel-card">
       <img
-        src="http://localhost:3000/public/${data.thumbail}"
+        src="${data.thumbail}"
         class="card-img-top"
         alt="${data.name}"
       />
@@ -47,4 +47,30 @@ const dataTableAdmin = (admins, number) => `
   </tr>
 `;
 
-export { createCard, dataTableWisata, dataTableAdmin };
+const detailDestination = (
+  destination
+) => `<div class="card travel-card detail-card">
+<img
+  src="${destination.thumbail}"
+  class="detail-img image-responsive"
+  alt="${destination.name}"
+/>
+<div class="card-body">
+  <h5 class="card-title text-center">
+    ${destination.name}
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      ${destination.description}
+    </li>
+    <li class="list-group-item">
+      <div class="location mt-4">
+          <i class="fa fa-map-marker stop mt-2"></i> ${destination.city}
+          <p>${destination.address}</p>                  
+      </div>
+    </li>
+  </ul>
+</div>
+</div>`;
+
+export { createCard, dataTableWisata, dataTableAdmin, detailDestination };
