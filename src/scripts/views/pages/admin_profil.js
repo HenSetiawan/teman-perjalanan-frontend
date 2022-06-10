@@ -1,3 +1,4 @@
+import { getCurrentAdmin } from '../../services/admin-service';
 const adminProfile = {
   async render() {
     return `
@@ -67,7 +68,8 @@ const adminProfile = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const admin = await getCurrentAdmin();
+    console.log(admin);
   },
 };
 

@@ -1,7 +1,9 @@
+import config from '../config/config';
+const token = localStorage.getItem('token');
+
 const getAllAdmin = async () => {
-  const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:3000/api/v1/admins', {
+    const response = await fetch(`${config.URL_API}/api/v1/admins`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -15,19 +17,32 @@ const getAllAdmin = async () => {
   }
 };
 
+const getCurrentAdmin = async () => {
+  try {
+    const response = await fetch(`${config.URL_API}/api/v1/admin`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    });
+    const admin = response.json();
+    return admin;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 const loginAdmin = async (username, password) => {
   const data = { username: username, password: password };
   try {
-    const response = await fetch(
-      'http://localhost:3000/api/v1/auth/admin/login',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`${config.URL_API}/api/v1/auth/admin/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
     const result = await response.json();
     if (result.token) {
       return result.token;
@@ -39,4 +54,4 @@ const loginAdmin = async (username, password) => {
   }
 };
 
-export { getAllAdmin, loginAdmin };
+export { getAllAdmin, loginAdmin, getCurrentAdmin };
