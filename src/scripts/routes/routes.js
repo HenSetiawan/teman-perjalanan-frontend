@@ -18,9 +18,9 @@ const routes = {
   '/registrasi': Registasi,
   '/detail/:id': Detail,
   '/user_profil': userProfile,
-  '/admin-profil': adminProfile,
-  '/data-admin': dataAdmin,
-  '/data-objek_wisata': dataObjekWisata,
+  '/admin_profil': adminProfile,
+  '/data_admin': dataAdmin,
+  '/data_objek_wisata': dataObjekWisata,
 };
  
 export default routes;
