@@ -41,7 +41,7 @@ const dataTableAdmin = (admins, number) => `
     <td>${admins.username}</td>
     <td>${admins.email}</td>
     <td>                              
-      <a href="#" class="btn btn-sm btn-warning">Edit</a>
+      <button class="btn btn-sm btn-warning edit" data-id=${admins.id}>Edit</Button>
       <a href="#" class="btn btn-sm btn-danger">Hapus</a>
     </td>
   </tr>
@@ -140,7 +140,7 @@ const adminProfil = (data) => `
       </div>
     </div>
   </div>
-`
+`;
 
 export {
   createCard,
@@ -149,5 +149,5 @@ export {
   detailDestination,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-  adminProfil
+  adminProfil,
 };

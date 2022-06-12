@@ -1,5 +1,5 @@
 import { dataTableAdmin } from '../template/template-creator';
-import { getAllAdmin } from '../../services/admin-service';
+import { getAllAdmin, deleteAdmin } from '../../services/admin-service';
 
 const dataAdmin = {
   async render() {
@@ -85,6 +85,17 @@ const dataAdmin = {
     const data = await getAllAdmin();
     data.admins.forEach((admin) => {
       tableData.innerHTML += dataTableAdmin(admin);
+    });
+
+    const btnEdit = document.querySelectorAll('.edit');
+    btnEdit.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const id = event.target.dataset.id;
+        deleteAdmin(id);
+        data.admins.forEach((admin) => {
+          tableData.innerHTML = dataTableAdmin(admin);
+        });
+      });
     });
   },
 };
