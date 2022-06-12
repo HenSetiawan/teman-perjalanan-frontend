@@ -41,8 +41,8 @@ const dataTableAdmin = (admins, number) => `
     <td>${admins.username}</td>
     <td>${admins.email}</td>
     <td>                              
-      <button class="btn btn-sm btn-warning edit" data-id=${admins.id}>Edit</Button>
-      <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+      <button class="btn btn-sm btn-danger hapus" data-id=${admins.id}>Hapus</Button>
+      <a href="/" class="btn btn-sm btn-warning">Edit</a>
     </td>
   </tr>
 `;

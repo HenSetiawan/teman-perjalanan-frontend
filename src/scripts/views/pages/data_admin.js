@@ -86,14 +86,22 @@ const dataAdmin = {
     data.admins.forEach((admin) => {
       tableData.innerHTML += dataTableAdmin(admin);
     });
-
-    const btnEdit = document.querySelectorAll('.edit');
+    const btnEdit = document.querySelectorAll('.hapus');
     btnEdit.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         const id = event.target.dataset.id;
-        deleteAdmin(id);
-        data.admins.forEach((admin) => {
-          tableData.innerHTML = dataTableAdmin(admin);
+        const rowIndex = event.target.parentElement.parentElement.rowIndex;
+        swal({
+          title: 'Apakah kamu yakin?',
+          text: 'Data akan terhapus secara permanen',
+          icon: 'warning',
+          buttons: true,
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            deleteAdmin(id);
+            tableData.deleteRow(rowIndex);
+          }
         });
       });
     });
