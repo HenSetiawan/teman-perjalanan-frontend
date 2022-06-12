@@ -1,6 +1,7 @@
+import config from '../config/config';
 const getAllDestinations = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/destinations');
+    const response = await fetch(`${config.URL_API}/api/v1/destinations`);
     const destinations = await response.json();
     return destinations;
   } catch (error) {
@@ -11,7 +12,7 @@ const getAllDestinations = async () => {
 const getDetailDestination = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/v1/destination/${id}`
+      `${config.URL_API}/api/v1/destination/${id}`
     );
     const destinations = await response.json();
     return destinations;

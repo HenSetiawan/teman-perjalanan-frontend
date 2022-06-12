@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import { loginAdmin } from '../../services/admin-service';
 
 const Login = {
@@ -51,7 +50,10 @@ const Login = {
       const username = document.querySelector('#username').value;
       const password = document.querySelector('#password').value;
       const token = await loginAdmin(username, password);
-      localStorage.setItem('token', token);
+      if (token) {
+        localStorage.setItem('token', token);
+        window.location.replace('/#/admin_profil');
+      }
     });
   },
 };

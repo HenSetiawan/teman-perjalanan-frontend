@@ -1,13 +1,11 @@
 import { getCurrentAdmin } from '../../services/admin-service';
-import { adminProfil } from '../template/template-creator'
+import { adminProfil } from '../template/template-creator';
 const adminProfile = {
   async render() {
     return `
         <br><center><h2>PROFIL ADMINISTRATOR</h2></center>
         <hr>
-
-        <div class"container-fluid" id="container">
-            
+        <div class"container-fluid" id="container"> 
         </div>
       `;
   },

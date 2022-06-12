@@ -15,7 +15,7 @@ const Detail = {
     const destination = await getDetailDestination(id);
     const container = document.querySelector('.container');
     console.log(destination);
-    container.innerHTML += detailDestination(destination.destination);
+    container.innerHTML += detailDestination(destination.destination[0]);
   },
 };
 
