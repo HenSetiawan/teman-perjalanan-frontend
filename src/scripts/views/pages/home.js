@@ -1,4 +1,5 @@
 import { createCard } from '../template/template-creator';
+import { getAllDestinations } from '../../services/destination-service';
 const Home = {
   async render() {
     return `
@@ -33,7 +34,10 @@ const Home = {
 
   async afterRender() {
     const listTravelContainer = document.querySelector('.list-travel');
-    listTravelContainer.innerHTML += createCard();
+    const destinations = await getAllDestinations();
+    destinations.destination.forEach((destination) => {
+      listTravelContainer.innerHTML += createCard(destination);
+    });
   },
 };
 

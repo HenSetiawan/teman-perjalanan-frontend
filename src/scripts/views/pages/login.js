@@ -1,3 +1,5 @@
+import { loginAdmin } from '../../services/admin-service';
+
 const Login = {
   async render() {
     return `
@@ -11,7 +13,9 @@ const Login = {
             <input
               type="text"
               class="form-control"
+              id="username"
               aria-label="Username"
+              required
               placeholder="hendysetiawan"
             />
           </div>
@@ -21,6 +25,8 @@ const Login = {
               type="password"
               class="form-control"
               aria-label="Username"
+              id="password"
+              required
               placeholder="********"
             />
           </div>
@@ -38,7 +44,17 @@ const Login = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const btnLogin = document.querySelector('.btn-login');
+    btnLogin.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const username = document.querySelector('#username').value;
+      const password = document.querySelector('#password').value;
+      const token = await loginAdmin(username, password);
+      if (token) {
+        localStorage.setItem('token', token);
+        window.location.replace('/#/admin_profil');
+      }
+    });
   },
 };
 

@@ -1,13 +1,22 @@
+import UrlParser from '../../routes/url-parser';
+import { getDetailDestination } from '../../services/destination-service';
+import { detailDestination } from '../template/template-creator';
 const Detail = {
-    async render() {
-      return `
-        <h2>Detail page</h2>
+  async render() {
+    return `
+        <div class="container">
+        </div>
       `;
-    },
-   
-    async afterRender() {
-      // Fungsi ini akan dipanggil setelah render()
-    },
-  };
-   
-  export default Detail;
+  },
+
+  async afterRender() {
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const { id } = url;
+    const destination = await getDetailDestination(id);
+    const container = document.querySelector('.container');
+    console.log(destination);
+    container.innerHTML += detailDestination(destination.destination[0]);
+  },
+};
+
+export default Detail;

@@ -38,6 +38,11 @@ body {
   font-size: 20px;
 }
 
+.detail-card {
+  width:60%;
+  margin: auto;
+}
+
 .travel-card p {
   color: #7d7987;
   font-size: 16px !important;
@@ -103,5 +108,10 @@ footer ul {
   color: white;
   height: 44px;
   border-radius: 16px;
+}
+
+.detail-img{
+  width: 400px;
+  margin: auto;
 }
 

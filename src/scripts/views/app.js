@@ -22,7 +22,19 @@ class App {
   // kita bisa menginisiasikan komponen lain bila ada
 
   async renderPage() {
+    const token = localStorage.getItem('token');
     const url = UrlParser.parseActiveUrlWithCombiner();
+    if (
+      url === '/admin_profil' ||
+      url === '/data_admin' ||
+      url === '/data_objek_wisata'
+    ) {
+      if (!token) {
+        window.location.replace('/#/login');
+        return;
+      }
+    }
+
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
