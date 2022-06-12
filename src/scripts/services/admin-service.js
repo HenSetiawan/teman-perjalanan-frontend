@@ -54,4 +54,20 @@ const loginAdmin = async (username, password) => {
   }
 };
 
-export { getAllAdmin, loginAdmin, getCurrentAdmin };
+const deleteAdmin = async (id) => {
+  try {
+    const response = await fetch(`${config.URL_API}/api/v1/admin/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    });
+    const admin = await response.json();
+    return admin;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getAllAdmin, loginAdmin, getCurrentAdmin, deleteAdmin };
