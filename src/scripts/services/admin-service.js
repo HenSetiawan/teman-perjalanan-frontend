@@ -70,4 +70,25 @@ const deleteAdmin = async (id) => {
   }
 };
 
-export { getAllAdmin, loginAdmin, getCurrentAdmin, deleteAdmin };
+const addNewAdmin = async (data) => {
+  try {
+    const response = await fetch(`${config.URL_API}/api/v1/admin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (result) {
+      return result;
+    } else {
+      return 'failed';
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getAllAdmin, loginAdmin, getCurrentAdmin, deleteAdmin, addNewAdmin };

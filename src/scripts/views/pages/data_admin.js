@@ -1,5 +1,9 @@
 import { dataTableAdmin } from '../template/template-creator';
-import { getAllAdmin, deleteAdmin } from '../../services/admin-service';
+import {
+  getAllAdmin,
+  deleteAdmin,
+  addNewAdmin,
+} from '../../services/admin-service';
 
 const dataAdmin = {
   async render() {
@@ -48,18 +52,18 @@ const dataAdmin = {
                 </button>
               </div>
               <div class="modal-body">
-                <form class="row" method="POST" action="">
+                <form class="row">
                   <div class="col-md-6">
                       <label for="namaAdmin" class="form-label">Nama</label>
-                      <input type="text" class="form-control" id="namaAdmin" name="nama" required>
+                      <input type="text" class="form-control" id="name" name="nama" required>
                   </div>
                   <div class="col-md-6">
                       <label for="EmailAdmin" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="EmailAdmin" name="email" required>
+                      <input type="email" class="form-control" id="email" name="email" required>
                   </div>
                   <div class="col-md-6">
                       <label for="usernameAdmin" class="form-label">Username</label>
-                      <input type="text" class="form-control" id="usernameAdmin" name="username" required>
+                      <input type="text" class="form-control" id="username" name="username" required>
                   </div>
                   <div class="col-md-6">
                       <label for="phone" class="form-label">Phone</label>
@@ -71,10 +75,10 @@ const dataAdmin = {
                   </div>
                   <div class="col-md-6">
                       <label for="passwordAdmin" class="form-label">Password</label>
-                      <input type="text" class="form-control" id="passwordAdmin" name="password" required>
+                      <input type="text" class="form-control" id="password" name="password" required>
                   </div>               
                   <div class="col-md-6 mt-3">
-                      <button class="btn btn-outline-primary" name="submit">Kirim Data</button>
+                      <button class="btn btn-outline-primary btn-submit" name="submit">Kirim Data</button>
                   </div>
                 </form>
               </div>
@@ -114,7 +118,25 @@ const dataAdmin = {
       });
     });
 
-    
+    const btnSubmit = document.querySelector('.btn-submit');
+    btnSubmit.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const name = document.querySelector('#name').value;
+      const email = document.querySelector('#email').value;
+      const username = document.querySelector('#username').value;
+      const phone = document.querySelector('#phone').value;
+      const address = document.querySelector('#address').value;
+      const password = document.querySelector('#password').value;
+
+      const data = { username, name, email, password, phone, address };
+      await addNewAdmin(data);
+
+      const newData = await getAllAdmin();
+      tableData.innerHTML = '';
+      newData.admins.forEach((admin) => {
+        tableData.innerHTML += dataTableAdmin(admin);
+      });
+    });
   },
 };
 
