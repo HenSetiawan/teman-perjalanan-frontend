@@ -94,7 +94,7 @@ const adminProfil = (data) => `
             <div class="mt-3">
               <h4>${data.name}</h4>
               <p class="text-secondary mb-1"></p>
-              <p class="text-muted font-size-sm">${data.no_telp}</p>
+              <p class="text-muted font-size-sm">${data.email}</p>
             </div>
           </div>
         </div>

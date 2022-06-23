@@ -13,8 +13,8 @@ const dataAdmin = {
               <div class="d-sm-flex align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Daftar Administrator</h6>
                 <div class="d-sm-inline-block">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahAdmin">
-                      Create new administrator
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalTambahAdmin">
+                      Tambah Data Admin
                     </button>
                 </div>
               </div>                
@@ -42,7 +42,7 @@ const dataAdmin = {
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="labelModalTambahAdmin">Create new administrator</h5>
+                <h5 class="modal-title" id="labelModalTambahAdmin">Tambah Data Admin</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -62,6 +62,14 @@ const dataAdmin = {
                       <input type="text" class="form-control" id="usernameAdmin" name="username" required>
                   </div>
                   <div class="col-md-6">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input type="text" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="address" class="form-label">Alamat</label>
+                      <input type="text" class="form-control" id="address" name="address" required>
+                  </div>
+                  <div class="col-md-6">
                       <label for="passwordAdmin" class="form-label">Password</label>
                       <input type="text" class="form-control" id="passwordAdmin" name="password" required>
                   </div>               
@@ -71,7 +79,7 @@ const dataAdmin = {
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
               </div>
             </div>
           </div>
@@ -105,6 +113,8 @@ const dataAdmin = {
         });
       });
     });
+
+    
   },
 };
 
