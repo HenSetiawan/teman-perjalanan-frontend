@@ -91,4 +91,32 @@ const addNewAdmin = async (data) => {
   }
 };
 
-export { getAllAdmin, loginAdmin, getCurrentAdmin, deleteAdmin, addNewAdmin };
+const updateAdmin = async (data, id) => {
+  try {
+    const response = await fetch(`${config.URL_API}/api/v1/admin/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (result) {
+      return result;
+    } else {
+      return 'failed';
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export {
+  getAllAdmin,
+  loginAdmin,
+  getCurrentAdmin,
+  deleteAdmin,
+  addNewAdmin,
+  updateAdmin,
+};
