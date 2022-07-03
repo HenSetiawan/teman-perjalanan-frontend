@@ -1,5 +1,6 @@
 import { createCard } from '../template/template-creator';
 import { getAllDestinations } from '../../services/destination-service';
+
 const Home = {
   async render() {
     return `

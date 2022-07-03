@@ -90,7 +90,7 @@ const dataAdmin = {
     const btnEdit = document.querySelectorAll('.edit');
     btnEdit.forEach((btn) => {
       btn.addEventListener('click', (event) => {
-        const id = event.target.dataset.id;
+        const { id } = event.target.dataset;
         deleteAdmin(id);
         data.admins.forEach((admin) => {
           tableData.innerHTML = dataTableAdmin(admin);

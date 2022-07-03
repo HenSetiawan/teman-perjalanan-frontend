@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import UrlParser from '../../routes/url-parser';
 import { getDetailDestination } from '../../services/destination-service';
 import { detailDestination } from '../template/template-creator';
+
 const Detail = {
   async render() {
     return `

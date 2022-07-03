@@ -1,5 +1,7 @@
-const createCard = (data) => {
-  return ` <div class="col-md-4 col-lg-4 col-sm-6 mb-2">
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+const createCard = (data) => ` <div class="col-md-4 col-lg-4 col-sm-6 mb-2">
     <div class="card travel-card">
       <img
         src="${data.thumbail}"
@@ -17,11 +19,11 @@ const createCard = (data) => {
       </div>
     </div>
   </div>`;
-};
 
 // data untuk tabel objek wisata pada halaman data_objek_wisata
 const dataTableWisata = (dataObjek, number) => `
   <tr>
+    // eslint-disable-next-line no-plusplus
     <td class="text-center">${number++}</td>
     <td>${dataObjek.name}</td>
     <td>${dataObjek.description}</td>
@@ -48,7 +50,7 @@ const dataTableAdmin = (admins, number) => `
 `;
 
 const detailDestination = (
-  destination
+  destination,
 ) => `<div class="card travel-card detail-card">
 <img
   src="${destination.thumbail}"

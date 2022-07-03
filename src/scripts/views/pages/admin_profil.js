@@ -1,5 +1,6 @@
 import { getCurrentAdmin } from '../../services/admin-service';
 import { adminProfil } from '../template/template-creator';
+
 const adminProfile = {
   async render() {
     return `

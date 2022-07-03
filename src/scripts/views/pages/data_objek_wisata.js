@@ -1,5 +1,5 @@
-import {dataTableWisata} from '../template/template-creator';
-import {getAllDestinations} from '../../services/destination-service';
+import { dataTableWisata } from '../template/template-creator';
+import { getAllDestinations } from '../../services/destination-service';
 
 const dataObjekWisata = {
   async render() {
@@ -87,13 +87,13 @@ const dataObjekWisata = {
   },
 
   async afterRender() {
-    const tableData = document.querySelector("#dataTable");
+    const tableData = document.querySelector('#dataTable');
     const destinations = await getAllDestinations();
     destinations.destination.forEach((dataObjek) => {
-      let number = 1;
+      const number = 1;
       tableData.innerHTML += dataTableWisata(dataObjek, number);
     });
-  }
+  },
 };
 
 export default dataObjekWisata;
